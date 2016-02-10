@@ -1,0 +1,53 @@
+{
+  "name": "ordered-collection-view",
+  "version": "1.0.0",
+  "description": "CollectionView manages a list of DOM elements using a Backbone.Collection  - call orderDOMAccordingToCollection to synchronize the child elements of your view with options.collection.    - Models that are in options.collection that do not correspond to direct children of this.el are used to construct new views using options.construct and appended to this.el    - Direct children of this.el that do not correspond to a model in options.collection are detached.    - Direct children of in this.el are ordered according to the index of their corresponding model in this.collection.        Re-ordering is performed in-place to minimize the commotion that the DOM is subjected to.  - call orderCollectionAccordingToDOM to synchronize the elements in options.collection with the child elements of this.el.    - Models in options.collection that are do not correspond to direct children of this.el are removed from options.collection.    - Elements that are direct children of this.el, but do not correspond to a model in the collection are left alone.    - The remaining models in the collection are sorted according to the order in which they appear relative to their siblings",
+  "author": "",
+  "scripts": {
+    "test": "mocha",
+    "gitlint": "dibslint --git --warnings",
+    "lint": "dibslint --root=."
+  },
+  "main": "index.js",
+  "pre-commit": {
+    "run": [
+      "gitlint"
+    ]
+  },
+  "devDependencies": {
+    "backbone-collection": "git+https://github.com/antialias/backbone-collection.git#master-fork",
+    "backbone-model": "^1.0.10",
+    "contains": "^0.1.1",
+    "dibslint": "^1.2.4",
+    "mocha": "^2.3.4",
+    "pre-commit": "^1.1.2",
+    "sinon": "^1.17.3"
+  },
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "dibslint": "^1.5.2",
+    "dom-insert": "^0.1.0",
+    "element-data-store": "0.0.6",
+    "jsdom": "^8.0.2",
+    "lodash.assign": "^4.0.2",
+    "lodash.bindall": "^4.0.0",
+    "lodash.compact": "^3.0.0",
+    "lodash.foreach": "^4.0.0",
+    "lodash.pick": "^4.0.1",
+    "lodash.pluck": "^3.1.2",
+    "lodash.result": "^4.1.0",
+    "lodash.toarray": "^4.1.0",
+    "simple-view": "^1.2.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antialias/ordered-collection-view.git"
+  },
+  "bugs": {
+    "url": "https://github.com/antialias/ordered-collection-view/issues"
+  },
+  "homepage": "https://github.com/antialias/ordered-collection-view#readme"
+}
