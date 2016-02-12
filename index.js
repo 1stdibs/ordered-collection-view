@@ -9,10 +9,12 @@ var compact = require('lodash.compact');
 var View = require('simple-view').View;
 var after = require('dom-insert').after;
 var slice = Array.prototype.slice;
+var Collection = require('backbone-collection').Collection;
 var collectionViewElementKey = '--collection-view-element-key';
 
 module.exports = View.extend({
     initialize: function (options) {
+        options = options || {};
         this.el[collectionViewElementKey] = this;
         bindAll(this, 'add', 'removeModel', 'orderDOMAccordingToCollection');
         this._viewCache = [];
@@ -25,7 +27,7 @@ module.exports = View.extend({
         this._emptyMessage = options.emptyMessage;
         this.currentlyAdding = [];
         if (!this.collection) {
-            this.collection = new Backbone.Collection();
+            this.collection = new Collection();
         }
         this.listenTo(this.collection, 'add', this.add);
         this.listenTo(this.collection, 'remove', this.removeModel);

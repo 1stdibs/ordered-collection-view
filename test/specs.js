@@ -56,6 +56,10 @@ describe('CollectionView', function () {
     afterEach(function () {
         sandbox.restore();
     });
+    it('should create a collection if options.collection is null', function () {
+        vc = new CollectionView();
+        assert(vc.collection instanceof Collection);
+    });
     it('should append collections existing views upon init', function () {
         assert.equal(vc.el.childNodes.length, testCollection.length);
     });
