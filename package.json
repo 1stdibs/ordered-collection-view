@@ -28,7 +28,6 @@
   },
   "dependencies": {
     "backbone-collection": "^1.0.8",
-    "dibslint": "^1.5.2",
     "dom-insert": "^0.1.0",
     "element-data-store": "0.0.6",
     "jsdom": "^8.0.2",
